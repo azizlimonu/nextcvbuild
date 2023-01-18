@@ -1,7 +1,8 @@
+import Card from '@/components/Card/Card'
 import React from 'react'
 
-export default function index() {
+export default function TemplatesCV() {
   return (
-    <div>index</div>
+    <Card />
   )
 }
