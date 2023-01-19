@@ -46,7 +46,7 @@ const CVExample = {
       universityName: 'University of Harvard',
       city: 'New York',
       degree: 'Master',
-      subject: 'Software Engineer',
+      major: 'Software Engineer',
       from: '2018',
       to: '2022',
     },
@@ -55,7 +55,7 @@ const CVExample = {
       universityName: 'University of Cambridge',
       city: 'New York',
       degree: 'Master',
-      subject: 'Artificial Intelegence',
+      major: 'Artificial Intelegence',
       from: '2022',
       to: '2026',
     },
@@ -115,7 +115,7 @@ const CVExample = {
       from: '1974',
       to: '2022',
     },
-    
+
   ],
 };
 

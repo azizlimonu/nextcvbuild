@@ -25,7 +25,7 @@ const CVEmpty = {
       universityName: '',
       city: '',
       degree: '',
-      subject: '',
+      major: '',
       from: '',
       to: '',
     },

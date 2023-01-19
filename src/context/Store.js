@@ -27,7 +27,7 @@ function cvReducer(cv, action) {
             universityName: '',
             city: '',
             degree: '',
-            subject: '',
+            major: '',
             from: '',
             to: '',
           },
