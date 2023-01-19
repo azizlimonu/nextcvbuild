@@ -9,7 +9,7 @@ import SectionTitle from './SectionTitle'
 
 export default function Education() {
   const { education } = useCV();
-  console.log(education);
+  // console.log(education);
   const dispatch = useCVDispatch();
   const [isShown, setIsShown] = useState(false);
 

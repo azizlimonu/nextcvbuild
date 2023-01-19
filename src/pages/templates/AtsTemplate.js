@@ -1,4 +1,5 @@
 import Education from '@/components/Form/Education';
+import Experience from '@/components/Form/Experience';
 import GeneralInfo from '@/components/Form/GeneralInfo';
 import Skills from '@/components/Form/Skills';
 import { useCV } from '@/context/Store'
@@ -20,7 +21,7 @@ export default function AtsTemplate() {
           <GeneralInfo />
           <Skills />
           <Education />
-          {/* Education */}
+          <Experience />
           {/* Experience */}
           {/* Awards */}
           {/* button  */}
