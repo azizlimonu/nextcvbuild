@@ -1,3 +1,4 @@
+import Awards from '@/components/Form/Awards';
 import Education from '@/components/Form/Education';
 import Experience from '@/components/Form/Experience';
 import GeneralInfo from '@/components/Form/GeneralInfo';
@@ -22,7 +23,7 @@ export default function AtsTemplate() {
           <Skills />
           <Education />
           <Experience />
-          {/* Experience */}
+          <Awards />
           {/* Awards */}
           {/* button  */}
           <button onClick={handlePrint}>Generate PDF</button>
