@@ -34,7 +34,7 @@ export default function Skills() {
     });
   };
 
-  console.log(skills);
+  // console.log(skills);
 
   const handleDeleteSkill = (skill) => {
     dispatch({

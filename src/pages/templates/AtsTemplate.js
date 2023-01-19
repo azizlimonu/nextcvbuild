@@ -1,3 +1,4 @@
+import Education from '@/components/Form/Education';
 import GeneralInfo from '@/components/Form/GeneralInfo';
 import Skills from '@/components/Form/Skills';
 import { useCV } from '@/context/Store'
@@ -18,6 +19,7 @@ export default function AtsTemplate() {
         <section className={style.cvform}>
           <GeneralInfo />
           <Skills />
+          <Education />
           {/* Education */}
           {/* Experience */}
           {/* Awards */}
