@@ -9,7 +9,7 @@ export default function Card() {
     {
       title: 'CV Professional',
       image: '/images/cv3.jpg',
-      linkPath: '/templates/professionaltemplate'
+      linkPath: '/templates/atstemplate'
     },
     {
       title: 'CV ATS',

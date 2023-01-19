@@ -1,0 +1,35 @@
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: #3f4958;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+  width: 516px;
+}
+
+.header:hover,
+.header:active {
+  background-color: #475467;
+}
+
+.header h3 {
+  font-size: 1.6rem;
+  color: #cccfd6;
+  font-weight: 400;
+}
+
+.dark {
+  color: #3f4958;
+  transition: 0.2s ease-in-out;
+}
+
+.light {
+  color: #cccfd6;
+  max-width: 20px;
+  transition: 0.2s ease-in-out;
+}
