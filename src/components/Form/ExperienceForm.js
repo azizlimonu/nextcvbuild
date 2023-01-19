@@ -1,15 +1,15 @@
 import { useCV, useCVDispatch } from '@/context/Store';
 import React, { useState } from 'react'
 import { Icons } from '../UI/Icons';
-import Input from '../UI/Input';
 import InputContainer from '../UI/InputContainer';
 import InputWrapper from '../UI/InputWrapper';
 import SectionWrapper from '../UI/SectionWrapper';
 import SectionTitle from './SectionTitle'
+import Input from '../UI/Input';
+import TextArea from '../UI/TextArea';
 
-export default function Education() {
-  const { education } = useCV();
-  // console.log(education);
+export default function ExperienceForm() {
+  const { experience } = useCV();
   const dispatch = useCVDispatch();
   const [isShown, setIsShown] = useState(false);
 
@@ -17,31 +17,26 @@ export default function Education() {
     setIsShown((prev) => !prev);
   };
 
-  const handleAddEducation = () => {
-    dispatch({ type: 'ADD_EDUCATION' });
+  const handleAddExperience = () => {
+    dispatch({ type: 'ADD_EXPERIENCE' });
+  };
+
+  const handleDeleteExperience = (item) => {
+    dispatch({ type: 'DELETE_EXPERIENCE', id: item.id });
   };
 
   const handleChange = (e, item) => {
     const { name, value } = e.target;
-    console.log("name :", name);
-    console.log("value :", value);
     dispatch({
-      type: 'CHANGE_EDUCATION',
-      education: { ...item, [name]: value }
+      type: 'CHANGE_EXPERIENCE',
+      experience: { ...item, [name]: value }
     });
-  };
-
-  const handleDeleteEducation = (item) => {
-    dispatch({
-      type: 'DELETE_EDUCATION',
-      id: item.id
-    })
   };
 
   return (
     <div>
       <SectionTitle
-        text='Education'
+        text='Experience'
         onToggleSection={handleToggle}
         isShown={isShown}
       />
@@ -50,23 +45,30 @@ export default function Education() {
           <Icons
             nameIcon='BsFillPlusSquareFill'
             className='dark'
-            onClick={handleAddEducation}
+            onClick={handleAddExperience}
             link={true}
           />
-          {education?.map((item) => (
+          {experience?.map((item) => (
             <InputWrapper key={item.id}>
+              <Input
+                type="text"
+                name="position"
+                placeholder="Position"
+                value={item.position}
+                onChange={(e) => handleChange(e, item)}
+                maxLength="35"
+                label="Position"
+              />
               <InputContainer>
-                {/* university name */}
                 <Input
                   type="text"
-                  name="universityName"
-                  placeholder="University"
-                  value={item.universityName}
+                  name="company"
+                  placeholder="Company"
+                  value={item.company}
                   onChange={(e) => handleChange(e, item)}
-                  maxLength="35"
-                  label="University"
+                  maxLength="20"
+                  label="Company"
                 />
-                {/* city */}
                 <Input
                   type="text"
                   name="city"
@@ -77,32 +79,16 @@ export default function Education() {
                   label="City"
                 />
               </InputContainer>
-
+              <TextArea
+                type="text"
+                name="description"
+                placeholder="Description"
+                value={item.description}
+                onChange={(e) => handleChange(e, item)}
+                maxLength="350"
+                label="Description"
+              />
               <InputContainer>
-                {/* Degree */}
-                <Input
-                  type="text"
-                  name="degree"
-                  placeholder="Degree"
-                  value={item.degree}
-                  onChange={(e) => handleChange(e, item)}
-                  maxLength="15"
-                  label="Degree"
-                />
-                {/* Major soon update.*/}
-                <Input
-                  type="text"
-                  name="major"
-                  placeholder="Major"
-                  value={item.major}
-                  onChange={(e) => handleChange(e, item)}
-                  maxLength="20"
-                  label="Major"
-                />
-              </InputContainer>
-
-              <InputContainer>
-                {/* Date Range */}
                 <Input
                   type="tel"
                   name="from"
@@ -122,18 +108,16 @@ export default function Education() {
                   label="To"
                 />
               </InputContainer>
-
               <Icons
                 nameIcon='BsFillTrashFill'
                 className='dark'
-                onClick={() => handleDeleteEducation(item)}
+                onClick={() => handleDeleteExperience(item)}
                 link={true}
               />
-
             </InputWrapper>
           ))}
         </SectionWrapper>
       )}
     </div>
   )
-}
+};

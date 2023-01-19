@@ -7,7 +7,7 @@ import InputWrapper from '../UI/InputWrapper';
 import Input from '../UI/Input';
 import style from '../../styles/Skills.module.css';
 
-export default function Skills() {
+export default function SkillsForm() {
   const [isShown, setIsShown] = useState(false);
   const { skills } = useCV();
   const dispatch = useCVDispatch();

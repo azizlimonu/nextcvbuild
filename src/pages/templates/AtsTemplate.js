@@ -1,52 +1,70 @@
-import Awards from '@/components/Form/Awards';
-import Education from '@/components/Form/Education';
-import Experience from '@/components/Form/Experience';
-import GeneralInfo from '@/components/Form/GeneralInfo';
-import Skills from '@/components/Form/Skills';
-import { useCV } from '@/context/Store'
-import React from 'react'
+import { useCV, useCVDispatch } from '@/context/Store'
+import React, { useRef } from 'react'
+import { useReactToPrint } from 'react-to-print';
 import style from '../../styles/AtsTemplate.module.css'
 
+// form Component
+import AwardsForm from '@/components/Form/AwardsForm';
+import EducationForm from '@/components/Form/EducationForm';
+import ExperienceForm from '@/components/Form/ExperienceForm';
+import GeneralInfoForm from '@/components/Form/GeneralInfoForm';
+import SkillsForm from '@/components/Form/SkillsForm';
+
+// preview Component
+import Header from '@/components/PreviewAts/Header';
+import Education from '@/components/PreviewAts/Education';
+import Skills from '@/components/PreviewAts/Skills';
+import Awards from '@/components/PreviewAts/Awards';
+import GeneralInfo from '@/components/PreviewAts/GeneralInfo';
+import Experience from '@/components/PreviewAts/Experience';
+
 export default function AtsTemplate() {
+  const dispatch = useCVDispatch();
   const { generalInfo, skills, education, experience, awards } = useCV();
-  const handlePrint = () => {
-    console.log("Printed");
-  }
+
+  const cvRef = useRef();
+  const handlePrint = useReactToPrint({
+    content: () => cvRef.current,
+    onAfterPrint: () => alert("Cv Printed Successfully")
+  });
+
   return (
     <div>
       {/* CV Form */}
-      {/* app */}
       <main className={style.main}>
-        {/* cv form sect */}
         <section className={style.cvform}>
-          <GeneralInfo />
-          <Skills />
-          <Education />
-          <Experience />
-          <Awards />
-          {/* Awards */}
-          {/* button  */}
-          <button onClick={handlePrint}>Generate PDF</button>
+          <GeneralInfoForm />
+          <SkillsForm />
+          <EducationForm />
+          <ExperienceForm />
+          <AwardsForm />
+          <div className={style.button}>
+            <button onClick={handlePrint}>Generate PDF</button>
+            <button onClick={() => dispatch({ type: 'LOAD_EXAMPLE_CV' })}>
+              Example CV
+            </button>
+            <button onClick={() => dispatch({ type: 'LOAD_EMPTY_CV' })}>
+              Empty CV
+            </button>
+          </div>
         </section>
 
-        {/* generate pdf */}
-
-        {/* CV Preview */}
-        <section>
-          <p>CV Preview</p>
-          {/* Header */}
-          <main>
+        {/* CV preview */}
+        <section className={style.cvpreview} ref={cvRef}>
+          <Header info={generalInfo} />
+          <main className={style.cvpreview}>
             {/* left side */}
-            <div>
-              {/* education */}
-              {/* skills */}
-              {/* awards */}
+            <div className={style.leftpreview}>
+              <Education />
+              <Skills />
+              <Awards />
             </div>
 
+            <div className={style.line}></div>
             {/* right side */}
-            <div>
-              {/* general info */}
-              {/* experience */}
+            <div className={style.rightpreview}>
+              <GeneralInfo />
+              <Experience />
             </div>
           </main>
         </section>

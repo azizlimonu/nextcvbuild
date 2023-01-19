@@ -7,7 +7,7 @@ import SectionWrapper from '../UI/SectionWrapper';
 import TextArea from '../UI/TextArea';
 import SectionTitle from './SectionTitle';
 
-export default function GeneralInfo() {
+export default function GeneralInfoForm() {
   const [isShown, setIsShown] = useState(true);
   const { generalInfo } = useCV();
   const dispatch = useCVDispatch();

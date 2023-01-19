@@ -16,6 +16,8 @@ export default function Hero() {
 
         <p className={heroStyles.desc}>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, vitae.
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, vitae.
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, vitae.
         </p>
 
         <Link href='/templates' className={heroStyles.linkbutton}>Get Started</Link>

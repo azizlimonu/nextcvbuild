@@ -23,12 +23,62 @@
   .main {
     flex-direction: column;
   }
+
+  .cvpreview{
+    width: 100%;
+  }
 }
 
 @media only screen and (max-width: 560px) {
   .main {
     margin: 1.6rem;
   }
+
+  .button{
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+  }
 }
 
+.button{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.button button{
+  background-color: rgb(191, 191, 190);
+  color: rgb(50, 14, 14);
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.cvpreview{
+  flex-grow: 1;
+  flex-basis: 65%;
+  align-self: flex-start;
+  background-color: white;
+  padding: 5rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.mainpreview{
+  display: flex;
+  justify-content: space-between;
+}
+
+.rightpreview{
+  flex-basis: 65%;
+}
+
+.leftpreview{
+  flex-basis: 25%;
+}
+
+.line{
+  border-style: inset;
+  border: 1px solid var(--secondary-gray);
+}
 

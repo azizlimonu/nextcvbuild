@@ -8,7 +8,7 @@ import SectionTitle from './SectionTitle'
 import Input from '../UI/Input';
 import TextArea from '../UI/TextArea';
 
-export default function Awards() {
+export default function AwardsForm() {
   const { awards } = useCV();
   const dispatch = useCVDispatch();
   const [isShown, setIsShown] = useState(false);
