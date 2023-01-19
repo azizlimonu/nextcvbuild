@@ -1,3 +1,8 @@
+.main {
+  display: flex;
+  margin: 3rem;
+}
+
 .cvform{
   flex-basis: 35%;
   background-color: var(--primary-light);
@@ -5,17 +10,12 @@
   margin-right: 3rem;
 }
 
-.cv-form > div:not(:last-child) {
+.cvform > div:not(:last-child) {
   margin-bottom: 2rem;
 }
 
-.main {
-  display: flex;
-  margin: 3rem;
-}
-
 @media only screen and (max-width: 1100px) {
-  .cv-form {
+  .cvform {
     width: 100%;
     margin-bottom: 3rem;
   }

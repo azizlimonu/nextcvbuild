@@ -1,4 +1,5 @@
 import GeneralInfo from '@/components/Form/GeneralInfo';
+import Skills from '@/components/Form/Skills';
 import { useCV } from '@/context/Store'
 import React from 'react'
 import style from '../../styles/AtsTemplate.module.css'
@@ -15,9 +16,8 @@ export default function AtsTemplate() {
       <main className={style.main}>
         {/* cv form sect */}
         <section className={style.cvform}>
-          {/* general Info */}
           <GeneralInfo />
-          {/* Skills */}
+          <Skills />
           {/* Education */}
           {/* Experience */}
           {/* Awards */}
@@ -29,6 +29,7 @@ export default function AtsTemplate() {
 
         {/* CV Preview */}
         <section>
+          <p>CV Preview</p>
           {/* Header */}
           <main>
             {/* left side */}
@@ -38,7 +39,6 @@ export default function AtsTemplate() {
               {/* awards */}
             </div>
 
-            <div>Line 1</div>
             {/* right side */}
             <div>
               {/* general info */}
