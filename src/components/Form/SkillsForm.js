@@ -5,7 +5,7 @@ import SectionTitle from './SectionTitle';
 import { Icons } from '../UI/Icons';
 import InputWrapper from '../UI/InputWrapper';
 import Input from '../UI/Input';
-import style from '../../styles/Skills.module.css';
+import style from '../../styles/form/Skills.module.css';
 
 export default function SkillsForm() {
   const [isShown, setIsShown] = useState(false);

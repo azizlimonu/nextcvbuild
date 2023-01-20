@@ -9,7 +9,7 @@
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   transition: 0.2s ease-in-out;
   cursor: pointer;
-  width: 516px;
+  /* width: 516px; */
 }
 
 .header:hover,

@@ -17,6 +17,7 @@ import Skills from '@/components/PreviewAts/Skills';
 import Awards from '@/components/PreviewAts/Awards';
 import GeneralInfo from '@/components/PreviewAts/GeneralInfo';
 import Experience from '@/components/PreviewAts/Experience';
+import Certification from '@/components/PreviewAts/Certification';
 
 export default function AtsTemplate() {
   const dispatch = useCVDispatch();
@@ -52,19 +53,26 @@ export default function AtsTemplate() {
         {/* CV preview */}
         <section className={style.cvpreview} ref={cvRef}>
           <Header info={generalInfo} />
-          <main className={style.cvpreview}>
+          <hr />
+          <main className={style.mainpreview}>
             {/* left side */}
             <div className={style.leftpreview}>
-              <Education />
-              <Skills />
-              <Awards />
+              <Education education={education} />
+              <hr />
+              <Skills skills={skills} />
+              <hr />
+              <Awards awards={awards} />
             </div>
 
             <div className={style.line}></div>
             {/* right side */}
             <div className={style.rightpreview}>
               <GeneralInfo />
+              <hr />
               <Experience />
+              <hr />
+              <Certification />
+              <hr />
             </div>
           </main>
         </section>

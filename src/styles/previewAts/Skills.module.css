@@ -1,0 +1,17 @@
+.skills {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 140px;
+}
+
+.title {
+  font-size: 1.6rem;
+  line-height: 1.2;
+  margin-bottom: 0.2rem;
+}
+
+.level {
+  font-size: 1.4rem;
+  line-height: 1.4;
+}
