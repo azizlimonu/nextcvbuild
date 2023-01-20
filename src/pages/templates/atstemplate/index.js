@@ -1,7 +1,7 @@
 import { useCV, useCVDispatch } from '@/context/Store'
 import React, { useRef } from 'react'
 import { useReactToPrint } from 'react-to-print';
-import style from '../../styles/AtsTemplate.module.css'
+import style from '../../../styles/AtsTemplate.module.css';
 
 // form Component
 import AwardsForm from '@/components/Form/AwardsForm';
