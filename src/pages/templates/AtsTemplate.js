@@ -67,7 +67,7 @@ export default function AtsTemplate() {
             <div className={style.line}></div>
             {/* right side */}
             <div className={style.rightpreview}>
-              <GeneralInfo />
+              <GeneralInfo info={generalInfo} />
               <hr />
               <Experience />
               <hr />

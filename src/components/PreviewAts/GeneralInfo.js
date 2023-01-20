@@ -1,8 +1,12 @@
-import React from 'react'
+import React from 'react';
+import style from '../../styles/previewAts/GeneralInfo.module.css';
 
-const GeneralInfo = ({info}) => {
+const GeneralInfo = ({ info }) => {
   return (
-    <div>GeneralInfo</div>
+    <div className={style.info}>
+      <h2>Profile</h2>
+      <p>{info.description}</p>
+    </div>
   )
 }
 
