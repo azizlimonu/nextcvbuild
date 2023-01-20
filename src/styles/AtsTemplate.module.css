@@ -10,6 +10,13 @@
   margin-right: 3rem;
 }
 
+.horizontal{
+  border-style: inset;
+  border: 1px solid var(--secondary-gray);
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .cvform > div:not(:last-child) {
   margin-bottom: 2rem;
 }
@@ -60,7 +67,7 @@
   flex-basis: 65%;
   align-self: flex-start;
   background-color: white;
-  padding: 5rem;
+  padding: 1rem;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 

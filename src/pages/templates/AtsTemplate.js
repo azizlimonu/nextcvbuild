@@ -21,7 +21,14 @@ import Certification from '@/components/PreviewAts/Certification';
 
 export default function AtsTemplate() {
   const dispatch = useCVDispatch();
-  const { generalInfo, skills, education, experience, awards } = useCV();
+  const {
+    generalInfo,
+    skills,
+    education,
+    experience,
+    awards,
+    certification
+  } = useCV();
 
   const cvRef = useRef();
   const handlePrint = useReactToPrint({
@@ -63,15 +70,14 @@ export default function AtsTemplate() {
               <hr />
               <Awards awards={awards} />
             </div>
-
             <div className={style.line}></div>
             {/* right side */}
             <div className={style.rightpreview}>
               <GeneralInfo info={generalInfo} />
               <hr />
-              <Experience />
+              <Experience experience={experience} />
               <hr />
-              <Certification />
+              <Certification certification={certification} />
               <hr />
             </div>
           </main>

@@ -107,13 +107,27 @@ const CVExample = {
       year: '2021',
     },
   ],
-  sertification: [
+  certification: [
     {
       id: uuidv4(),
       name: 'ISO-1234',
       source: 'Udemy Course',
       from: '1974',
       to: '2022',
+    },
+    {
+      id: uuidv4(),
+      name: 'FrontEnd Web Developer',
+      source: 'Meta Facebook',
+      from: '2018',
+      to: '2022',
+    },
+    {
+      id: uuidv4(),
+      name: 'Backend Web Developer',
+      source: 'IICI-202',
+      from: '2022',
+      to: '2023',
     },
 
   ],
