@@ -101,8 +101,8 @@ function cvReducer(cv, action) {
         skills: [
           {
             id: uuidv4(),
-            title: '',
-            rating: 'Master',
+            title: 'Skill',
+            level: 'Beginner',
           },
           ...cv.skills,
         ],
@@ -116,17 +116,30 @@ function cvReducer(cv, action) {
         skills: updatedSkills,
       };
     }
-    case 'CHANGE_SKILL': {
-      const index = cv.skills.findIndex((s) => s.id === action.skill.id);
-      const newSkills = [...cv.skills];
-      newSkills[index] = { ...cv.skills[index], ...action.skill };
+    case 'CHANGE_SKILL_TITLE': {
+      const updatedSkills = cv.skills.map((skill) => {
+        if (skill.id === action.id) {
+          return { ...skill, title: action.title };
+        }
+        return skill;
+      });
 
-      const newCV = {
-        ...cv,
-        skills: newSkills,
-      };
+      return { ...cv, skills: updatedSkills };
+    }
 
-      return { ...newCV };
+    case 'CHANGE_SKILL_LEVEL': {
+      const updatedSkills = cv.skills.map((skill) => {
+        if (skill.id === action.id) {
+          console.log("action id", action.id);
+          console.log("skill id", skill.id);
+          console.log("action rating", action.rating);
+          console.log("CV SKILLS", skill);
+          return { ...skill, level: action.level };
+        }
+        return skill;
+      });
+
+      return { ...cv, skills: updatedSkills };
     }
     case 'ADD_AWARD': {
       return {

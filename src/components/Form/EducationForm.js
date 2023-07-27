@@ -23,8 +23,8 @@ export default function EducationForm() {
 
   const handleChange = (e, item) => {
     const { name, value } = e.target;
-    console.log("name :", name);
-    console.log("value :", value);
+    // console.log("name :", name);
+    // console.log("value :", value);
     dispatch({
       type: 'CHANGE_EDUCATION',
       education: { ...item, [name]: value }

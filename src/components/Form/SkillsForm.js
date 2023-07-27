@@ -24,14 +24,19 @@ export default function SkillsForm() {
 
   const handleChangeSkill = (e, skill) => {
     const { name, value } = e.target;
-    const field = name === 'skill-name' ? 'title' : 'rating';
-    // console.log("name : ", name);
-    // console.log("value : ", value);
-
-    dispatch({
-      type: 'CHANGE_SKILL',
-      skill: { ...skill, [field]: value },
-    });
+    if (name === 'skill-name') {
+      dispatch({
+        type: 'CHANGE_SKILL_TITLE',
+        id: skill.id,
+        title: value,
+      });
+    } else if (name === 'skill-level') {
+      dispatch({
+        type: 'CHANGE_SKILL_LEVEL',
+        id: skill.id,
+        level: value,
+      });
+    }
   };
 
   // console.log(skills);
@@ -72,9 +77,9 @@ export default function SkillsForm() {
                   label='Skill'
                 />
                 <select
-                  name='skill-rating'
+                  name='skill-level'
                   onChange={(e) => handleChangeSkill(e, skill)}
-                  value={skill.rating}
+                  value={skill.level}
                 >
                   <option value="beginner">Beginner</option>
                   <option value="intermediate">Intermediate</option>

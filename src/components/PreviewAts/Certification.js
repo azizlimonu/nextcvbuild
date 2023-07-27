@@ -2,7 +2,7 @@ import React from 'react';
 import style from '../../styles/previewAts/Certification.module.css';
 
 const Certification = ({ certification }) => {
-  console.log(certification);
+  // console.log(certification);
   return (
     <div>
       <h2>Certification</h2>
