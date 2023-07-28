@@ -48,7 +48,6 @@ export default function SkillsForm() {
     });
   };
 
-
   return (
     <div>
       <SectionTitle
@@ -81,10 +80,10 @@ export default function SkillsForm() {
                   onChange={(e) => handleChangeSkill(e, skill)}
                   value={skill.level}
                 >
-                  <option value="beginner">Beginner</option>
-                  <option value="intermediate">Intermediate</option>
-                  <option value="advance">Advance</option>
-                  <option value="master">Master</option>
+                  <option value="Beginner">Beginner</option>
+                  <option value="Intermediate">Intermediate</option>
+                  <option value="Advance">Advance</option>
+                  <option value="Master">Master</option>
                 </select>
 
                 <Icons
